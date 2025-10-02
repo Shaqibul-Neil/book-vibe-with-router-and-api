@@ -5,10 +5,10 @@ import Navbar from "../Components/Navbar";
 const RootLayout = () => {
   return (
     <div>
+      <header className="py-5">
+        <Navbar />
+      </header>
       <Container>
-        <header>
-          <Navbar />
-        </header>
         <Outlet />
       </Container>
     </div>

@@ -1,53 +1,68 @@
 import { NavLink } from "react-router";
 import ThemeController from "../ThemeController/ThemeController";
+import Container from "./Container";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import Links from "./Links";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navItems = [
+    { name: "Home", to: "/" },
+    { name: "Listed Books", to: "/listed-books" },
+    { name: "Pages To Read", to: "/pages-to-read" },
+  ];
+  const handleMenuOpen = () => {
+    setMenuOpen(!menuOpen);
+  };
   return (
-    <div className="navbar bg-base-100 shadow-sm">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    <Container>
+      <nav className="flex justify-between items-center">
+        <div className="flex items-center gap-2 ">
+          <span onClick={handleMenuOpen} className="lg:hidden cursor-pointer">
+            {menuOpen ? <X /> : <Menu />}
+            <ul
+              className={`flex flex-col gap-3 text-sm bg-green-50 py-4 px-6 rounded-md w-44 lg:hidden absolute duration-900 transition-all border border-green-600 text-gray-600 ${
+                menuOpen ? "top-14" : "-top-50"
+              }`}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          ></ul>
+              <li className="duration-300 transition-all hover:text-green-900">
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li className="duration-300 transition-all hover:text-green-900">
+                <NavLink to="/listed-books">Listed Books</NavLink>
+              </li>
+              <li className="duration-300 transition-all hover:text-green-900">
+                <NavLink to="/pages-to-read">Pages To Read</NavLink>
+              </li>
+              <li className="duration-300 transition-all hover:text-green-900">
+                <a>Sign In</a>
+              </li>
+              <li className="duration-300 transition-all hover:text-green-900">
+                <a>Sign Up</a>
+              </li>
+            </ul>
+          </span>
+
+          <NavLink to="/" className="text-xl lg:text-2xl font-semibold">
+            Book Vibe
+          </NavLink>
         </div>
-        <a className="btn btn-ghost text-xl">Book Vibe</a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/listed-books">Listed Books</NavLink>
-          </li>
-          <li>
-            <NavLink to="/pages-to-read">Pages To Read</NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn btn-success">Sign In</a>
-        <a className="btn btn-info">Sign Up</a>
-        <ThemeController />
-      </div>
-    </div>
+
+        <div className="hidden lg:flex">
+          <ul className="flex items-center gap-8 text-base">
+            {navItems.map((item, i) => (
+              <Links item={item} key={i} />
+            ))}
+          </ul>
+        </div>
+        <div className="flex items-center gap-4">
+          <a className="btn btn-success text-white hidden lg:flex">Sign In</a>
+          <a className="btn btn-info text-white hidden lg:flex">Sign Up</a>
+          <ThemeController />
+        </div>
+      </nav>
+    </Container>
   );
 };
 
