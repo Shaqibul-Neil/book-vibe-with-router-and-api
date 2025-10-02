@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import ListedBooks from "./Pages/ListedBooks";
 import PagesToRead from "./Pages/PagesToRead";
 import axios from "axios";
+import BookDetails from "./Pages/BookDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/pages-to-read",
         Component: PagesToRead,
+      },
+      {
+        path: "/book-details/:bookName",
+        Component: BookDetails,
       },
     ],
   },

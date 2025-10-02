@@ -1,13 +1,20 @@
 import { Star } from "lucide-react";
+import { useNavigate } from "react-router";
+import slugify from "react-slugify";
 
 const Book = ({ book }) => {
-  console.log(book);
+  const navigate = useNavigate();
+  // console.log(navigate);
+  const slug = slugify(book.bookName);
   return (
-    <div className="border border-gray-400 shadow-sm space-y-6 p-4 h-[482px] rounded-lg">
+    <div
+      className="border border-gray-400 shadow-sm space-y-6 p-4 h-[482px] rounded-lg cursor-pointer"
+      onClick={() => navigate(`/book-details/${slug}`)}
+    >
       <figure className="h-[230px] bg-[rgba(19,19,19,0.05)] rounded-lg flex items-center justify-center">
         <img
           src={book.image}
-          alt="Shoes"
+          alt={book.bookName}
           className="w-32 h-[166px] transform rotate-[-3deg] hover:rotate-0 transition duration-300"
         />
       </figure>

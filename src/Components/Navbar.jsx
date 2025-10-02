@@ -22,7 +22,7 @@ const Navbar = () => {
           <span onClick={handleMenuOpen} className="lg:hidden cursor-pointer">
             {menuOpen ? <X /> : <Menu />}
             <ul
-              className={`flex flex-col gap-3 text-sm bg-green-50 py-4 px-6 rounded-md w-44 lg:hidden absolute duration-900 transition-all border border-green-600 text-gray-600 ${
+              className={`flex flex-col gap-3 text-sm bg-[rgba(19,19,19,0.05)] py-4 px-6 rounded-md w-44 lg:hidden absolute duration-900 transition-all border border-gray-500 ${
                 menuOpen ? "top-14" : "-top-50"
               }`}
             >
