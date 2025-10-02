@@ -57,8 +57,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center gap-4">
-          <a className="btn btn-success text-white hidden lg:flex">Sign In</a>
-          <a className="btn btn-info text-white hidden lg:flex">Sign Up</a>
+          <a className="btn bg-green-600 text-white hidden lg:flex rounded-lg px-6">
+            Sign In
+          </a>
+          <a className="btn bg-[#59C6D2] text-white hidden lg:flex rounded-lg px-6">
+            Sign Up
+          </a>
           <ThemeController />
         </div>
       </nav>

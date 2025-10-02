@@ -6,7 +6,7 @@ const Links = ({ item }) => {
       to={item.to}
       className={({
         isActive,
-      }) => `p-2 transition-all rounded-md duration-200 border
+      }) => `py-2 px-3 transition-all rounded-md duration-200 border
         ${
           isActive && item.name !== "Book Vibe"
             ? "border-green-600  text-green-600"
