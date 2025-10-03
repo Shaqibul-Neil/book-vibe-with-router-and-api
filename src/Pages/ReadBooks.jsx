@@ -4,7 +4,7 @@ import ReadBook from "../Components/ReadBook";
 
 const ReadBooks = () => {
   const books = useContext(BooksProvider);
-  console.log(books);
+  // console.log(books);
   return (
     <div className="grid grid-cols-1 gap-6">
       {books.map((book) => (

@@ -14,7 +14,9 @@ const ListedBooks = () => {
         id=""
         className="mx-auto block px-2 border rounded-lg bg-green-500 text-white py-3 mt-6 mb-16"
       >
-        <option disabled>Sort By</option>
+        <option disabled selected>
+          Sort By
+        </option>
         <option value="">Rating</option>
         <option value="">Number of Pages</option>
         <option value="">Publisher Year</option>

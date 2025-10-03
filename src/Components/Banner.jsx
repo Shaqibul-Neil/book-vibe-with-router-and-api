@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div className="lg:py-20 md:py-16 py-12 bg-[rgba(19,19,19,0.05)] rounded-md flex flex-col lg:flex-row justify-between items-center mt-8 lg:px-28 px-4 mb-24">
       <div className="space-y-8 lg:order-1 order-2 lg:mt-0 mt-12">
@@ -6,7 +9,10 @@ const Banner = () => {
           Books to freshen up <br /> your bookshelf
         </h1>
         <div className="flex items-center justify-center">
-          <button className="btn bg-green-600 text-white px-6 rounded-lg">
+          <button
+            className="btn bg-green-600 text-white px-6 rounded-lg"
+            onClick={() => navigate("/listed-books")}
+          >
             View the List
           </button>
         </div>
