@@ -8,7 +8,7 @@ const Banner = () => {
         <h1 className="font-bold lg:text-6xl md:text-5xl text-3xl lg:leading-20 md:leading-16 leading-12 px-8 lg:px-0">
           Books to freshen up <br /> your bookshelf
         </h1>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center lg:justify-start justify-center">
           <button
             className="btn bg-green-600 text-white px-6 rounded-lg"
             onClick={() => navigate("/listed-books")}
@@ -17,7 +17,7 @@ const Banner = () => {
           </button>
         </div>
       </div>
-      <div>
+      <div className="lg:order-2 order-1">
         <img src="../public/banner.png" alt="" />
       </div>
     </div>

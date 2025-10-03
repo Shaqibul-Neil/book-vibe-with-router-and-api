@@ -12,7 +12,7 @@ const ListedBooks = () => {
       <select
         name=""
         id=""
-        className="mx-auto block px-2 border rounded-lg bg-green-500 text-white py-3 mt-6 mb-16"
+        className="mx-auto block px-2 border rounded-lg bg-green-500 text-white py-3 mt-6 mb-16 outline-none"
       >
         <option disabled selected>
           Sort By

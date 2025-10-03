@@ -8,7 +8,7 @@ const Book = ({ book }) => {
   const slug = slugify(book.bookName);
   return (
     <div
-      className="border border-gray-400 shadow-sm space-y-6 p-4 h-[482px] rounded-lg cursor-pointer"
+      className="border border-gray-400 shadow-sm space-y-6 p-4  rounded-lg cursor-pointer"
       onClick={() => navigate(`/book-details/${slug}`)}
     >
       <figure className="h-[230px] bg-[rgba(19,19,19,0.05)] rounded-lg flex items-center justify-center">
@@ -31,7 +31,7 @@ const Book = ({ book }) => {
           <p className="font-medium text-gray-600">By: {book.author}</p>
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between pb-4">
           <p className="font-medium text-gray-600">{book.category}</p>
           <div className="flex items-center gap-2">
             <p className="font-medium text-gray-600">{book.rating}</p>
