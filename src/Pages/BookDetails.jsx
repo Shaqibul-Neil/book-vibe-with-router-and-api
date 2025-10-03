@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import BooksProvider from "../Provider/BooksProvider";
 import slugify from "react-slugify";
 
@@ -8,9 +8,8 @@ const BookDetails = () => {
   // const params = useParams();
   // console.log(params);
   const { bookName } = useParams();
-  const navigate = useNavigate();
-  const books = useContext(BooksProvider);
-  const book = books.find((b) => slugify(b.bookName) === bookName);
+  const { booksData, handleWishList } = useContext(BooksProvider);
+  const book = booksData.find((b) => slugify(b.bookName) === bookName);
   //slugify(b.bookName) → প্রতিটা বইয়ের নামকে slug বানালাম। === bookName → URL থেকে পাওয়া slug এর সাথে মিলালাম।
 
   return (
@@ -67,7 +66,7 @@ const BookDetails = () => {
           </button>
           <button
             className="text-white bg-[#50B1C9] px-12 py-3 rounded-lg cursor-pointer text-lg font-bold"
-            onClick={() => navigate("/listed-books/wishlist-books")}
+            onClick={() => handleWishList(book)}
           >
             Wishlist
           </button>

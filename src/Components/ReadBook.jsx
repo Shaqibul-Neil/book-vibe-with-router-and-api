@@ -57,7 +57,6 @@ const ReadBook = ({ book }) => {
             View Details
           </button>
         </div>
-        3
       </div>
     </div>
   );
