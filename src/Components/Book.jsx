@@ -19,16 +19,18 @@ const Book = ({ book }) => {
         />
       </figure>
       <div className="space-y-4">
-        <div className="flex items-center gap-8">
-          {book.tags.map((tag, i) => (
-            <p className="text-lg text-green-600" key={i}>
-              {tag}
-            </p>
-          ))}
-        </div>
-        <div className="border-b border-gray-400 border-dashed pb-4 space-y-4">
-          <h2 className="text-2xl font-bold">{book.bookName}</h2>
-          <p className="font-medium text-gray-600">By: {book.author}</p>
+        <div className="space-y-4 h-[165px] border-b border-gray-400 border-dashed pb-4">
+          <div className="flex items-center gap-8">
+            {book.tags.map((tag, i) => (
+              <p className="text-lg text-green-600" key={i}>
+                {tag}
+              </p>
+            ))}
+          </div>
+          <div className=" space-y-4">
+            <h2 className="text-2xl font-bold">{book.bookName}</h2>
+            <p className="font-medium text-gray-600">By: {book.author}</p>
+          </div>
         </div>
 
         <div className="flex items-center justify-between pb-4">
