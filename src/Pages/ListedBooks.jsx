@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { NavLink, Outlet } from "react-router";
+import BooksProvider from "../Provider/BooksProvider";
 
 const ListedBooks = () => {
   // console.log(books);
+  const { sortBy, selectSortBy } = useContext(BooksProvider);
+
   return (
     <div className="mt-6">
       <div className="h-28 bg-[rgba(19,19,19,0.05)]">
@@ -10,16 +14,16 @@ const ListedBooks = () => {
         </div>
       </div>
       <select
-        name=""
-        id=""
         className="mx-auto block px-2 border rounded-lg bg-green-500 text-white py-3 mt-6 mb-16 outline-none"
+        value={sortBy}
+        onChange={(e) => selectSortBy(e.target.value)}
       >
-        <option disabled selected>
+        <option disabled value="">
           Sort By
         </option>
-        <option value="">Rating</option>
-        <option value="">Number of Pages</option>
-        <option value="">Publisher Year</option>
+        <option value="rating">Rating</option>
+        <option value="pages">Number of Pages</option>
+        <option value="publisher">Publisher Year</option>
       </select>
 
       <div className="flex items-center gap-8">

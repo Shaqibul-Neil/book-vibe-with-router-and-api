@@ -3,11 +3,11 @@ import BooksProvider from "../Provider/BooksProvider";
 import ReadBook from "../Components/ReadBook";
 
 const ReadBooks = () => {
-  const { booksData } = useContext(BooksProvider);
-  // console.log(books);
+  const { sortedBooks } = useContext(BooksProvider);
+  console.log(sortedBooks);
   return (
     <div className="grid grid-cols-1 gap-6">
-      {booksData.map((book) => (
+      {sortedBooks.map((book) => (
         <ReadBook book={book} key={book.bookId} />
       ))}
     </div>
