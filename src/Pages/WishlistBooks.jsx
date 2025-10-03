@@ -5,7 +5,7 @@ import EmptyWishList from "../Components/EmptyWishList";
 
 const WishlistBooks = () => {
   const { wishList } = useContext(BooksProvider);
-  console.log(wishList);
+
   return (
     <div>
       <h2 className="text-4xl text-center font-bold mt-12">My Wish List</h2>
@@ -18,7 +18,7 @@ const WishlistBooks = () => {
             Books in the wishlist :{" "}
             {wishList.length < 9 ? `0${wishList.length}` : wishList.length}
           </h2>
-          <div className="grid grid-cols-3 mt-12 mb-24">
+          <div className="grid grid-cols-2 mt-12 mb-24 gap-4">
             {wishList.map((list) => (
               <WishListBook list={list} key={list.bookId} />
             ))}

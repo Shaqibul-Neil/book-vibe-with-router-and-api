@@ -11,6 +11,7 @@ const RootLayout = () => {
     const bookExist = wishList.find((list) => list.bookId === newBook.bookId);
     if (!bookExist) {
       setWishList([...wishList, newBook]);
+      alert("Book added to wishlist");
     } else {
       alert("already added");
     }
