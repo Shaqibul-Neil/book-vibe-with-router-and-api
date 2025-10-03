@@ -10,7 +10,7 @@ const Links = ({ item }) => {
         ${
           isActive && item.name !== "Book Vibe"
             ? "border-green-600  text-green-600"
-            : " border-transparent"
+            : "border-transparent"
         } hover:border-green-600`}
     >
       {item.name}

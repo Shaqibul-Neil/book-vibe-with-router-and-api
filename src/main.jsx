@@ -8,6 +8,8 @@ import ListedBooks from "./Pages/ListedBooks";
 import PagesToRead from "./Pages/PagesToRead";
 import axios from "axios";
 import BookDetails from "./Pages/BookDetails";
+import WishlistBooks from "./Pages/WishlistBooks";
+import ReadBooks from "./Pages/ReadBooks";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,20 @@ const router = createBrowserRouter([
       {
         path: "/listed-books",
         Component: ListedBooks,
+        children: [
+          {
+            index: true,
+            Component: ReadBooks,
+          },
+          {
+            path: "/listed-books/read-books",
+            Component: ReadBooks,
+          },
+          {
+            path: "/listed-books/wishlist-books",
+            Component: WishlistBooks,
+          },
+        ],
       },
       {
         path: "/pages-to-read",

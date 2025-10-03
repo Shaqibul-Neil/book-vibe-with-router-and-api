@@ -5,9 +5,8 @@ import BooksProvider from "../Provider/BooksProvider";
 
 const RootLayout = () => {
   const booksData = useLoaderData();
-  // console.log(booksData);
   return (
-    <BooksProvider value={booksData}>
+    <BooksProvider.Provider value={booksData}>
       <div>
         <header className="py-5">
           <Navbar />
@@ -16,7 +15,7 @@ const RootLayout = () => {
           <Outlet />
         </Container>
       </div>
-    </BooksProvider>
+    </BooksProvider.Provider>
   );
 };
 
