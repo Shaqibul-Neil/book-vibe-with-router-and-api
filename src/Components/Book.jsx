@@ -12,11 +12,7 @@ const Book = ({ book }) => {
       onClick={() => navigate(`/book-details/${slug}`)}
     >
       <figure className="h-[230px] bg-[rgba(19,19,19,0.05)] rounded-lg flex items-center justify-center">
-        <img
-          src={book.image}
-          alt={book.bookName}
-          className="w-32 h-[166px] transform rotate-[-3deg] hover:rotate-0 transition duration-300"
-        />
+        <img src={book.image} alt={book.bookName} className="w-32 h-[166px]" />
       </figure>
       <div className="space-y-4">
         <div className="space-y-4 h-[165px] border-b border-gray-400 border-dashed pb-4">
