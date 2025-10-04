@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
-import emptyBox from "../../public/empty-box.json";
 
+import emptyBox from "/src/empty-box.json";
 const EmptyWishList = () => {
   return (
     <div className="mb-24">

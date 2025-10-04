@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useParams } from "react-router";
 import BooksProvider from "../Provider/BooksProvider";
 import slugify from "react-slugify";
+import { addToStorage } from "../localStorage/localStorage";
 
 const BookDetails = () => {
   //useLocation → memory state ধরতে (refresh safe না)। useParams → URL param ধরতে (refresh safe, SEO friendly)।
@@ -12,6 +13,8 @@ const BookDetails = () => {
   const book = booksData.find((b) => slugify(b.bookName) === bookName);
   //slugify(b.bookName) → প্রতিটা বইয়ের নামকে slug বানালাম। === bookName → URL থেকে পাওয়া slug এর সাথে মিলালাম।
 
+  //adding in local storage
+  const handleMarkAsRead = (id) => addToStorage(id);
   return (
     <div className="flex justify-between items-center my-12 h-[calc(100vh-82px] gap-12">
       <figure className="w-[50%] h-[790px] bg-[rgba(19,19,19,0.05)] rounded-lg flex items-center justify-center">
@@ -61,8 +64,11 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="flex items-center gap-6">
-          <button className="font-bold px-12 py-3 border rounded-lg cursor-pointer text-lg">
-            Read
+          <button
+            className="font-bold px-12 py-3 border rounded-lg cursor-pointer text-lg"
+            onClick={() => handleMarkAsRead(book.bookId)}
+          >
+            Mark as Read
           </button>
           <button
             className="text-white bg-[#50B1C9] px-12 py-3 rounded-lg cursor-pointer text-lg font-bold"

@@ -19,7 +19,7 @@ const RootLayout = () => {
     }
   };
 
-  console.log(sortBy);
+  // console.log(sortBy);
   const sortedBooks = [...booksData].sort((a, b) => {
     if (sortBy === "rating") return a.rating - b.rating;
     if (sortBy === "pages") return a.totalPages - b.totalPages;

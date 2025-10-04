@@ -1,5 +1,3 @@
-import { Star } from "lucide-react";
-
 const WishListBook = ({ list }) => {
   return (
     <div className="border border-gray-400 shadow-sm space-y-6 p-4  rounded-lg cursor-pointer flex items-center gap-6">
